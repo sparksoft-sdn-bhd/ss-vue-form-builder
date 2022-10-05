@@ -1,5 +1,5 @@
 <template>
-    <div :class="[styles.CONTAINER.FLUID, 'form-padding', 'vue-form-builder']">
+    <div class="container-fluid md-layout form-padding vue-form-builder">
         <!-- top configuration -->
         <FormConfiguration
             :permissions="permissions"
@@ -40,7 +40,7 @@
 
         <hr>
 
-        <p class="copyright-text" v-text="copyrightText"></p>
+        <!-- <p class="copyright-text" v-text="copyrightText"></p> -->
     </div>
 </template>
 

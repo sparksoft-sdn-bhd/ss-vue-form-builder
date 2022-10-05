@@ -1,6 +1,7 @@
 <template>
     <div class="form-configuration-block pbottom-10">
         <button
+            ref="Btn"
             :class="styles.BUTTON.PRIMARY"
             @click="open"
             :disabled="!permissions.canEditFormConfigurations"
@@ -30,6 +31,9 @@
         model: {
             event: 'change',
             props: 'value'
+        },
+        mounted () {
+            this.$refs.Btn.click()
         },
         methods: {
             /**

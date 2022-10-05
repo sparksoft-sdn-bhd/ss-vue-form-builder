@@ -24,7 +24,7 @@
     import {EVENT_CONSTANTS} from "@/configs/events";
     import {ALERT_DIALOG} from "@/libraries/alert-dialog";
 
-    const SIDEBAR_WIDTH_SIZE = "300px"
+    const SIDEBAR_WIDTH_SIZE = "400px"
 
     export default {
         name: "GlobalSidebar",

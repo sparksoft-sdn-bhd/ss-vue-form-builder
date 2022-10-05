@@ -21,6 +21,9 @@
     padding-right: 15px;
 }
 
+.plr-10 {
+    padding: 5px 10px;
+}
 
 .mr-15 {
     margin-right: 15px;
@@ -188,6 +191,7 @@
 
 .toggleable-sub-headline {
     padding-left: 10px;
+    display: block;
 }
 
 /*********************************
@@ -457,6 +461,69 @@ body {
     max-height: 0;
 }
 
+/*********************************
+* FORM CONTROL - SIDEBAR
+**********************************/
+.form-control {
+    display: block;
+    width: 100%;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 1.8;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+@media (prefers-reduced-motion:reduce) {
+    .form-control {transition: none}
+}
+.form-control::-ms-expand {
+    background-color: transparent;
+    border: 0
+}
+.form-control:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #3ce07e !important;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgb(49 229 124 / 21%);
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+.form-text {
+    display: block;
+    margin-top: .25rem;
+}
+.form-row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -5px;
+    margin-left: -5px
+}
+.form-row>.col,.form-row>[class*=col-] {
+    padding-right:5px;
+    padding-left:5px
+}
+.form-check {
+    position:relative;
+    display:block;
+    padding-left:1.25rem
+}
+.form-check-input {
+    position:absolute;
+    margin-top:.3rem;
+    margin-left:-1.25rem
+}
+
 /*************************************************************
 * 3-rd parties css
 *************************************************************/
@@ -504,7 +571,7 @@ body {
 }
 
 .litepicker {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Heebo", "Roboto", "Helvetica Neue", "Arial", sans-serif;
     font-size: 0.8em;
     display: none
 }
@@ -903,6 +970,23 @@ html.md-theme-default .vue-form-builder .section-container {
     min-width: 100%;
     max-width: 100%;
 }
+.md-button.md-primary,
+.md-button.md-primary.active,
+.md-button.md-primary.active:focus,
+.md-button.md-primary.active:hover,
+.md-button.md-primary:active,
+.md-button.md-primary:active:focus,
+.md-button.md-primary:active:hover,
+.md-button.md-primary:focus,
+.md-button.md-primary:hover,
+.open>.md-button.md-primary.dropdown-toggle,
+.open>.md-button.md-primary.dropdown-toggle:focus,
+.open>.md-button.md-primary.dropdown-toggle:hover {
+    background-color: #51b070 !important;
+    color: #fff !important;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
 
 .md-button.md-info,
 .md-button.md-info.active,
@@ -918,6 +1002,8 @@ html.md-theme-default .vue-form-builder .section-container {
 .open>.md-button.md-info.dropdown-toggle:hover {
     background-color: #00bcd4 !important;
     color: #fff !important;
+    padding: 5px 10px;
+    border-radius: 5px;
 }
 
 .md-button.md-secondary,
@@ -931,6 +1017,8 @@ html.md-theme-default .vue-form-builder .section-container {
 .md-button.md-secondary:hover {
     background-color: #999 !important;
     color: #fff !important;
+    padding: 5px 10px;
+    border-radius: 5px;
 }
 
 .md-button.md-success,
@@ -947,6 +1035,8 @@ html.md-theme-default .vue-form-builder .section-container {
 .open>.md-button.md-success.dropdown-toggle:hover {
     background-color: #4caf50 !important;
     color: #fff !important;
+    padding: 5px 10px;
+    border-radius: 5px;
 }
 
 .md-button.md-warning,
@@ -963,6 +1053,26 @@ html.md-theme-default .vue-form-builder .section-container {
 .open>.md-button.md-warning.dropdown-toggle:hover {
     background-color: #ff9800 !important;
     color: #fff !important;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.md-button.md-accent,
+.md-button.md-accent.active,
+.md-button.md-accent.active:focus,
+.md-button.md-accent.active:hover,
+.md-button.md-accent:active,
+.md-button.md-accent:active:focus,
+.md-button.md-accent:active:hover,
+.md-button.md-accent:focus,
+.md-button.md-accent:hover,
+.open>.md-button.md-accent.dropdown-toggle,
+.open>.md-button.md-accent.dropdown-toggle:focus,
+.open>.md-button.md-accent.dropdown-toggle:hover {
+    background-color: #dc3545 !important;
+    color: #fff !important;
+    padding: 5px 10px;
+    border-radius: 5px;
 }
 
 html.md-theme-default .vue-form-builder .sidebar {
@@ -972,7 +1082,7 @@ html.md-theme-default .vue-form-builder .sidebar {
     background-color: #fff !important;
 }
 
-html.md-theme-default .vue-form-builder .sidebar a.md-list-item-action {
+html.md-theme-default .vue-form-builder .sidebar a.md-list-item-action, .list-group .md-list {
     width: 100%;
     color: #495057 !important;
     text-align: inherit;
@@ -988,13 +1098,20 @@ html.md-theme-default .vue-form-builder a.md-list-item-action {
     text-align: inherit;
 }
 
-html.md-theme-default .vue-form-builder .md-list-item {
+html.md-theme-default .vue-form-builder .md-list-item, .list-group .md-list-item {
     position: relative;
     display: block;
     padding: .75rem 1.25rem;
     margin-bottom: -1px;
     background-color: #fff;
     border: 1px solid rgba(0, 0, 0, .125);
+}
+.list-group a {
+    color: #495057;
+    text-decoration: none;
+}
+.list-group .vue-form-builder .type-headline {
+    font-weight: bold;
 }
 
 @media (max-width: 768px) {
@@ -1324,4 +1441,11 @@ html.md-theme-default .vue-form-builder .md-list-item {
 @keyframes animatetop {
     from {top: -300px; opacity: 0}
     to {top: 0; opacity: 1}
+}
+
+/*********************************
+* CUSTOM STYLE ADDING
+**********************************/
+.p-inline-flex {
+    display: inline-flex;  
 }

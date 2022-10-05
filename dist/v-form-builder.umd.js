@@ -8787,7 +8787,7 @@ var alert_dialog = __webpack_require__("caca");
 //
 
 
-var SIDEBAR_WIDTH_SIZE = "300px";
+var SIDEBAR_WIDTH_SIZE = "400px";
 /* harmony default export */ var GlobalSidebarvue_type_script_lang_js_ = ({
   name: "GlobalSidebar",
   props: {
@@ -8812,10 +8812,10 @@ var SIDEBAR_WIDTH_SIZE = "300px";
      * Open the Right Sidebar
      */
     open: function open(runnerId) {
-      if (this.isOpen) {
-        alert_dialog["a" /* ALERT_DIALOG */].show('Please close the current active sidebar before open another');
-        return;
-      } // set size
+      // if (this.isOpen) {
+      //   alert_dialog["a" /* ALERT_DIALOG */].show('Please close the current active sidebar before open another');
+      //   return;
+      // } // set size
 
 
       this.$el.style.width = SIDEBAR_WIDTH_SIZE;
