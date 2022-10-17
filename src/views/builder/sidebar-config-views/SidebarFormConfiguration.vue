@@ -16,14 +16,14 @@
                    v-model="formConfiguration.subHeadline">
         </div>
 
-        <div :class="styles.FORM.FORM_GROUP">
+       <div :class="styles.FORM.FORM_GROUP">
             <label>
                 Show Form Headline?
                 <input type="checkbox" v-model="formConfiguration.isShowHeadline">
             </label>
         </div>
 
-        <div :class="styles.FORM.FORM_GROUP">
+         <!-- <div :class="styles.FORM.FORM_GROUP">
             <label>
                 Wrapper &#x3C;form&#x3E; outside of the Form?
                 <input type="checkbox" v-model="formConfiguration.renderFormTag">
@@ -62,7 +62,7 @@
                        :class="styles.FORM.FORM_CONTROL"
                        v-model="formConfiguration.serverSideValidationEndpoint">
             </div>
-        </div>
+        </div> -->
 
         <div class="buttons">
             <button :class="styles.BUTTON.PRIMARY" @click="save(false)">
