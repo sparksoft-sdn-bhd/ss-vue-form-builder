@@ -15678,7 +15678,7 @@ var CONTROL_DEFAULT_DATA = {
   'isShowLabel': true,
   'placeholderText': '',
   // :placeholder
-  'containerClass': styles["a" /* STYLES */].COLUMNS.COL4,
+  'containerClass': styles["a" /* STYLES */].COLUMNS.COL6,
   'additionalContainerClass': '',
   // :class for the <div> outer container
   'additionalFieldClass': '',

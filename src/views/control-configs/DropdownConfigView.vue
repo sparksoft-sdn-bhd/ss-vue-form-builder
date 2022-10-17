@@ -21,7 +21,7 @@
             </select>
         </div>
 
-        <div v-show="this.control.dataMode === listDataModes.api.val">
+        <!-- <div v-show="this.control.dataMode === listDataModes.api.val">
             <div :class="styles.FORM.FORM_GROUP">
                 <label>
                     Rest-API URL
@@ -58,12 +58,11 @@
                        :class="styles.FORM.FORM_CONTROL"
                        v-model="control.apiTextKey">
             </div>
-        </div>
+        </div> -->
 
 
-        <div :class="styles.FORM.FORM_GROUP"
-             v-show="this.control.dataMode === listDataModes.list.val">
-
+        <div :class="styles.FORM.FORM_GROUP">
+            <!-- v-show="this.control.dataMode === listDataModes.list.val" -->
             <label>
                 List Options
                 <span class="pointer"
@@ -83,17 +82,17 @@
                 </div>
 
                 <div :class="styles.FORM.FORM_GROUP">
-                    <label>Item Value</label>
+                    <label>Label Text (Ex: Label Text)</label>
                     <input type="text" :class="styles.FORM.FORM_CONTROL"
-                           placeholder="Radio-Value"
-                           v-model="listItem.value">
+                           placeholder="Label Text"
+                           v-model="listItem.text">
                 </div>
 
                 <div :class="styles.FORM.FORM_GROUP">
-                    <label>Label Text</label>
+                    <label>Label Value (Ex: label_text)</label>
                     <input type="text" :class="styles.FORM.FORM_CONTROL"
-                           placeholder="Label text"
-                           v-model="listItem.text">
+                           placeholder="Radio-Value"
+                           v-model="listItem.value">
                 </div>
             </div>
 

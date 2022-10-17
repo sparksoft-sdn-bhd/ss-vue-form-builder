@@ -14,7 +14,7 @@
             </select>
         </div>
 
-        <div :class="styles.FORM.FORM_GROUP">
+        <!-- <div :class="styles.FORM.FORM_GROUP">
             <label>Button Class (Type Attribute)</label>
             <select type="text"
                     :class="styles.FORM.FORM_CONTROL"
@@ -26,7 +26,7 @@
                     {{name}} ({{className}})
                 </option>
             </select>
-        </div>
+        </div> -->
 
         <div :class="styles.FORM.FORM_GROUP">
             <label>
@@ -68,7 +68,7 @@
 
         computed: {
             buttonTypeList() {
-                return ['button', 'submit', 'clear']
+                return ['button', 'submit']
             },
             buttonClasses() {
                 return this.styles.BUTTON

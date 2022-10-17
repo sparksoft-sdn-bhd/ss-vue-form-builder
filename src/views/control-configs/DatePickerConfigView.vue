@@ -15,10 +15,10 @@
         </div>
 
         <!--- Only show this configuration if return Type is Format --->
-        <div :class="styles.FORM.FORM_GROUP" v-show="control.returnType === listReturnTypes.format.val">
+        <!-- <div :class="styles.FORM.FORM_GROUP" v-show="control.returnType === listReturnTypes.format.val">
             <label>Date Format</label>
             <input type="text" :class="styles.FORM.FORM_CONTROL" v-model="control.format" />
-        </div>
+        </div> -->
 
         <div :class="styles.FORM.FORM_GROUP">
             <label>Start Date of the Week</label>
@@ -34,7 +34,7 @@
             </select>
         </div>
 
-        <div :class="styles.FORM.FORM_GROUP">
+        <!-- <div :class="styles.FORM.FORM_GROUP">
             <label>
                 Minimum Date
                 <IconTooltip icon="informationOutline" text="Follow this format: YYYY-MM-DD. Empty for none." />
@@ -50,7 +50,7 @@
             </label>
             <input type="text" :class="styles.FORM.FORM_CONTROL" v-model="control.maxDate"  />
             <small>Maximum Date can be selected in the Calendar</small>
-        </div>
+        </div> -->
 
         <div :class="styles.FORM.FORM_GROUP">
             <label>
@@ -66,17 +66,17 @@
         </div>
 
         <!--- Only show this configuration if date-range --->
-        <div :class="styles.FORM.FORM_GROUP" v-show="!control.singleMode">
+        <!-- <div :class="styles.FORM.FORM_GROUP" v-show="!control.singleMode">
             <label>Minimum Day in Range (0 for none)</label>
-            <input type="number" step="1" :class="styles.FORM.FORM_CONTROL" v-model.number="control.minDays" />
+            <input type="number" step="0" :class="styles.FORM.FORM_CONTROL" v-model.number="control.minDays" />
         </div>
 
         <div :class="styles.FORM.FORM_GROUP" v-show="!control.singleMode">
             <label>Maximum Day in Range (0 for none)</label>
-            <input type="number" step="1" :class="styles.FORM.FORM_CONTROL" v-model.number="control.maxDays" />
-        </div>
+            <input type="number" step="0" :class="styles.FORM.FORM_CONTROL" v-model.number="control.maxDays" />
+        </div> -->
 
-        <div :class="styles.FORM.FORM_GROUP">
+        <!-- <div :class="styles.FORM.FORM_GROUP">
             <label>Number of Months</label>
             <input type="number" step="1" :class="styles.FORM.FORM_CONTROL" v-model.number="control.numberOfMonths" />
             <small>Number of Months will be shown up</small>
@@ -86,7 +86,7 @@
             <label>Number of Columns</label>
             <input type="number" step="1" :class="styles.FORM.FORM_CONTROL" v-model.number="control.numberOfColumns" />
             <small>Number of Columns will be shown up</small>
-        </div>
+        </div> -->
     </div>
 </template>
 

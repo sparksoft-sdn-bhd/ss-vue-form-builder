@@ -7,10 +7,10 @@ const RADIO_CHECKBOX_STYLE = {
         val: 'line',
         description: "Line by Line"
     },
-    next: {
-        val: 'next',
-        description: "Next to each others"
-    },
+    // next: {
+    //     val: 'next',
+    //     description: "Next to each others"
+    // },
     bothSide: {
         val: "bothSide",
         description: "Stay on each sides in a row (Left - Right)",
@@ -45,10 +45,10 @@ const DATE_PICKER_RETURN_TYPES = {
         val: "format",
         description: "Date String from Date Format"
     },
-    object: {
-        val: "object",
-        description: "JS-Date Object"
-    }
+    // object: {
+    //     val: "object",
+    //     description: "JS-Date Object"
+    // }
 }
 
 /**
@@ -95,10 +95,10 @@ const DROPDOWN_DATA_MODES = {
         val: 'list',
         description: "Normal - Pre-Config List Items"
     },
-    api: {
-        val: 'api',
-        description: "API - List Items from your own API",
-    },
+    // api: {
+    //     val: 'api',
+    //     description: "API - List Items from your own API",
+    // },
 }
 
 /**

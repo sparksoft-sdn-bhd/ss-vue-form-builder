@@ -48,17 +48,17 @@
                 </div>
 
                 <div :class="styles.FORM.FORM_GROUP">
-                    <label>Item Value</label>
-                    <input type="text" :class="styles.FORM.FORM_CONTROL"
-                           placeholder="Radio/Checkbox-Value"
-                           v-model="listItem.value">
-                </div>
-
-                <div :class="styles.FORM.FORM_GROUP">
-                    <label>Label Text</label>
+                    <label>Label Text (Ex: Label Text)</label>
                     <input type="text" :class="styles.FORM.FORM_CONTROL"
                            placeholder="Label text"
                            v-model="listItem.text">
+                </div>
+
+                <div :class="styles.FORM.FORM_GROUP">
+                    <label>Label Value (Ex: label_text)</label>
+                    <input type="text" :class="styles.FORM.FORM_CONTROL"
+                           placeholder="Radio/Checkbox-Value"
+                           v-model="listItem.value">
                 </div>
             </div>
         </div>

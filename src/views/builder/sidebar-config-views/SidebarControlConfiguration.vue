@@ -32,9 +32,9 @@
         />
 
         <div class="buttons">
-            <button :class="styles.BUTTON.PRIMARY" @click="save(false)">
+            <!-- <button :class="styles.BUTTON.PRIMARY" @click="save(false)">
                 Save
-            </button>
+            </button> -->
             <button :class="styles.BUTTON.INFO" @click="save(true)">
                 Save & Close
             </button>

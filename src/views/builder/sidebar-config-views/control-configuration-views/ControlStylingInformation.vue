@@ -11,7 +11,7 @@
             </select>
         </div>
 
-        <div :class="styles.FORM.FORM_GROUP">
+        <!-- <div :class="styles.FORM.FORM_GROUP">
             <label>Container Additional Classes</label>
             <input type="text" :class="styles.FORM.FORM_CONTROL" v-model="control.additionalContainerClass">
         </div>
@@ -24,7 +24,7 @@
         <div :class="styles.FORM.FORM_GROUP">
             <label>Control-Label Additional Classes</label>
             <input type="text" :class="styles.FORM.FORM_CONTROL" v-model="control.additionalLabelClass">
-        </div>
+        </div> -->
     </SidebarToggleableContainer>
 </template>
 

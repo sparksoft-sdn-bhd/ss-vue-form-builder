@@ -309,7 +309,7 @@ const CONTROL_DEFAULT_DATA = {
 
     'placeholderText': '', // :placeholder
 
-    'containerClass': STYLES.COLUMNS.COL4,
+    'containerClass': STYLES.COLUMNS.COL6,
     'additionalContainerClass': '', // :class for the <div> outer container
 
     'additionalFieldClass': '', // :class for <input> <select> ...

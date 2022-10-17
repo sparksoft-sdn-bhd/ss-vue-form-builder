@@ -10,7 +10,7 @@
   },
   "scripts": {
     "serve": "cross-env NODE_ENV=development vue-cli-service serve --port 9999",
-    "build": "vue-cli-service build --skip-plugins @vue/cli-plugin-eslint",
+    "build": "vue-cli-service build --target lib --formats umd-min --no-clean --name v-form-builder ./src/index.js --skip-plugins @vue/cli-plugin-eslint",
     "lint": "vue-cli-service lint",
     "build-lib": "cross-env NODE_ENV=production vue-cli-service build --target lib --name v-form-builder ./src/index.js --skip-plugins @vue/cli-plugin-eslint"
   },
