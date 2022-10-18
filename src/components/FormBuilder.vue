@@ -5,7 +5,7 @@
         <FormConfiguration
             :permissions="permissions"
             v-model="formData.formConfig"
-            class="rename-form-btn"
+            class="outline-form-btn"
         />
 
         <!-- form headline -->

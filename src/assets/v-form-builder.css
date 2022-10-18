@@ -53,12 +53,15 @@
 * END GLOBAL PADDING - MARGIN
 **********************************/
 
-.container-fluid {
+.main-container-fluid {
     width: 80% !important;
     background-color: white;
     border-radius: 5px;
-    margin: 10px auto !important;
-    padding: 3rem !important;
+    margin: 3em auto !important;
+    padding: 0 !important;
+}
+.container-fluid {
+    padding: 1rem 2rem 3rem 2rem !important;
 }
 
 .vue-form-builder hr {
@@ -83,7 +86,7 @@
 }
 
 .vue-form-builder .add-section-container:hover {
-    border-color: #4834d4;
+    border-color: #3cd76a;
     cursor: pointer;
 }
 
@@ -205,8 +208,10 @@
     background-color: #51b070; 
     padding: 1em 1em 3.5em 1em; 
     margin-bottom: 1.5em;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 }
-.rename-form-btn {
+.outline-form-btn {
     position: relative;
     border: 1px solid #ffffff;
     color: white;

@@ -1,13 +1,11 @@
 <template>
     <div class="form-configuration-block pbottom-10">
-        <!-- ref="Btn" -->
         <button
             :class="styles.BUTTON.PRIMARY"
             ref="Btn"
             @click="open"
             :disabled="!permissions.canEditFormConfigurations"
         >
-            <span v-html="$form.getIcon('cog')"></span>
             <span>Rename Form</span>
         </button>
     </div>
