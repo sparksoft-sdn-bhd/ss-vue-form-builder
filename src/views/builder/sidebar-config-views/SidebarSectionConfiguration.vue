@@ -3,7 +3,7 @@
         <h5>Section Configuration</h5>
 
         <div :class="styles.FORM.FORM_GROUP">
-            <label>Headline</label>
+            <label>Section Title</label>
             <input type="text"
                    :class="styles.FORM.FORM_CONTROL"
                    v-model="sectionConfiguration.headline">
@@ -17,7 +17,7 @@
         </div> -->
 
         <div :class="styles.FORM.FORM_GROUP">
-            <label>Sub-Headline</label>
+            <label>Section Description</label>
             <input type="text"
                    :class="styles.FORM.FORM_CONTROL"
                    v-model="sectionConfiguration.subHeadline">
@@ -41,7 +41,7 @@
             <!-- <button :class="styles.BUTTON.PRIMARY" @click="save(false)">
                 Save
             </button> -->
-            <button :class="styles.BUTTON.INFO" @click="save(true)">
+            <button :class="styles.BUTTON.PRIMARY" @click="save(true)">
                 Save & Close
             </button>
         </div>

@@ -1,13 +1,14 @@
 <template>
     <div class="form-configuration-block pbottom-10">
+        <!-- ref="Btn" -->
         <button
-            ref="Btn"
             :class="styles.BUTTON.PRIMARY"
+            ref="Btn"
             @click="open"
             :disabled="!permissions.canEditFormConfigurations"
         >
             <span v-html="$form.getIcon('cog')"></span>
-            <span>Form Configurations</span>
+            <span>Rename Form</span>
         </button>
     </div>
 </template>
@@ -69,6 +70,7 @@
 
                 let newValue = Object.assign({}, this.value, data)
                 this.$emit('change', newValue) // run this to update v-model
+                this.permissions.canEditFormConfigurations = true;
             },
 
             /**

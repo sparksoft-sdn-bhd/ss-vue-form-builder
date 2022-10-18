@@ -1,27 +1,26 @@
 <template>
     <div class="sidebar-form-configuration">
-        <h5>Main Form Configuration</h5>
-
+        <h5>Form Configuration</h5>
         <div :class="styles.FORM.FORM_GROUP">
-            <label>Form Headline</label>
+            <label>Form Title</label>
             <input type="text"
                    :class="styles.FORM.FORM_CONTROL"
                    v-model="formConfiguration.headline">
         </div>
 
         <div :class="styles.FORM.FORM_GROUP">
-            <label>Form Sub-Headline</label>
+            <label>Form Description</label>
             <input type="text"
                    :class="styles.FORM.FORM_CONTROL"
                    v-model="formConfiguration.subHeadline">
         </div>
-
+<!-- 
        <div :class="styles.FORM.FORM_GROUP">
             <label>
-                Show Form Headline?
+                Show Form Title?
                 <input type="checkbox" v-model="formConfiguration.isShowHeadline">
             </label>
-        </div>
+        </div> -->
 
          <!-- <div :class="styles.FORM.FORM_GROUP">
             <label>
@@ -68,7 +67,7 @@
             <!-- <button :class="styles.BUTTON.PRIMARY" @click="save(false)">
                 Save
             </button> -->
-            <button :class="styles.BUTTON.INFO" @click="save(true)">
+            <button :class="styles.BUTTON.PRIMARY" @click="save(true)">
                 Save & Close
             </button>
         </div>

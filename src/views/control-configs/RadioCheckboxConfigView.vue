@@ -30,10 +30,10 @@
 
         <div :class="styles.FORM.FORM_GROUP">
             <label>
-                List Selections
-                <span class="pointer"
+                Add List Selections
+                <span class="pointer ml-2"
                       @click="addListItem"
-                      v-html="$form.getIcon('addOutline', '16px', '16px', 'green')">
+                      v-html="$form.getIcon('addOutline', '25px', '25px', 'green')">
                 </span>
             </label>
 
@@ -43,7 +43,7 @@
                 <div class="tool-block">
                     <span class="pointer"
                           @click="removeListItem(iItem)"
-                          v-html="$form.getIcon('close', '16px', '16px', 'red')">
+                          v-html="$form.getIcon('close', '20px', '20px', 'red')">
                     </span>
                 </div>
 

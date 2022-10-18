@@ -1,9 +1,11 @@
 <template>
     <div class="container-fluid md-layout form-padding vue-form-builder">
+        
         <!-- top configuration -->
         <FormConfiguration
             :permissions="permissions"
             v-model="formData.formConfig"
+            class="rename-form-btn"
         />
 
         <!-- form headline -->
@@ -11,6 +13,11 @@
             <h1 v-text="formData.formConfig.headline"></h1>
             <p v-text="formData.formConfig.subHeadline"></p>
         </div>
+        <div class="form-headline-container" v-show="!formData.formConfig.headline">
+            <h1>Survey Form Title</h1>
+            <p>We would love to hear your thoughts or feedback on how we can improve your experience!</p>
+        </div>
+        <hr/>
 
         <!-- sections of the form -->
         <SectionContainer
@@ -37,8 +44,6 @@
             :formData="formData"
             :permissions="permissions"
         />
-
-        <hr>
 
         <!-- <p class="copyright-text" v-text="copyrightText"></p> -->
     </div>

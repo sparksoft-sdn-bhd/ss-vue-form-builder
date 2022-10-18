@@ -2,35 +2,41 @@
     <div id="app">
         <!-- <h1 class="text-center mt-2">Vue-Form-Builder @ v2.1.0 - Development-Preview</h1>
         <p class="text-center">Presented by <strong>Seth (Sandaru) Phat</strong></p>
-        <h4 class="text-center mb-3">What you <strong>BUILD</strong> is what you <strong>GOT</strong>.</h4> -->
+        <h4 class="text-center mb-3">What you <strong>BUILD</strong> is what you <strong>GOT</strong>.</h4> --> 
 
-        <!-- <div class="col-md-12">
-            <button class="btn btn-info mr-2" @click="getData">Get JSON Form-Data (Console / Builder)</button>
-            <button class="btn btn-info mr-2" @click="setData">Set JSON Form-Data (Basic Configuration / Builder)</button>
-            <button class="btn btn-info mr-2" @click="createBlank">Create Blank Form (Builder)</button>
-
-            <button class="btn btn-info mr-2" @click="viewRenderer">
+        <!-- <div class="col-md-12"> -->
+            <!-- <button class="btn btn-info mr-2" @click="getData">Get JSON Form-Data (Console / Builder)</button> -->
+            <!-- <button class="btn btn-info mr-2" @click="setData">Sample of Survey Form (Basic Configuration / Builder)</button> -->
+            <!-- <button class="btn btn-info mr-2" @click="createBlank">Create Blank Form (Builder)</button> -->
+        <!-- </div> -->
+        
+        <div class="header-bar">
+            <button class="btn rename-form-btn" @click="viewRenderer">
                 <span v-show="isRenderer">
                     Back to Builder
                 </span>
                 <span v-show="!isRenderer">
-                    View Renderer Form from Basic Configuration
+                    Preview
                 </span>
             </button>
-        </div> -->
-
-        <hr>
-
+        </div>
+    
         <FormBuilder v-if="!isRenderer" v-model="formData"></FormBuilder>
 
         <div class="row" v-if="isRenderer" style="padding: 20px; margin-right: 0">
-            <div class="col-md-12 mb-4">
+            <FormRenderer
+                v-model="formInputData"
+                :class="{'col-md-9': isShowData, 'col-md-12': !isShowData}"
+                :form-configuration="formData"
+                :read-only="readOnly"
+            />
+            <!-- <div class="col-md-12 mb-4"> 
                 <button class="btn btn-success  mr-2" @click="isShowData = !isShowData">
                     <span v-show="isShowData">Hide Form Data</span>
                     <span v-show="!isShowData">Show Form Data</span>
                 </button>
 
-                <button class="btn btn-info mr-2" @click="setRandomData">Set Random Data</button>
+                <button class="btn btn-info mr-2" @click="setRandomData">Set Random Data</button> 
 
                 <button
                     class="btn btn-info mr-2"
@@ -39,19 +45,12 @@
                     <span v-show="readOnly">Turn off ReadOnly mode</span>
                     <span v-show="!readOnly">Turn on ReadOnly mode</span>
                 </button>
-            </div>
+            </div> -->
 
-            <FormRenderer
-                v-model="formInputData"
-                :class="{'col-md-9': isShowData, 'col-md-12': !isShowData}"
-                :form-configuration="formData"
-                :read-only="readOnly"
-            />
-
-            <div class="p-0" :class="{'col-md-3': isShowData, 'd-none': !isShowData}">
+            <!-- <div class="p-0" :class="{'col-md-3': isShowData, 'd-none': !isShowData}">
                 <h4>Form Input Data</h4>
                 <pre class="code"><code class="code" v-html="JSON.stringify(formInputData, null, 2)"></code></pre>
-            </div>
+            </div> -->
         </div>
     </div>
 </template>
@@ -87,7 +86,7 @@
             },
 
             setData() {
-                this.formData = Object.assign({}, DEMO_FORM_DATA);
+                this.formData = Object.assign({}, this.formData);  //DEMO_FORM_DATA
             },
 
             viewRenderer() {
@@ -98,6 +97,7 @@
                 }
 
                 this.isRenderer = false;
+                this.createBlank();
             },
 
             setRandomData() {

@@ -3,10 +3,10 @@
 
         <label>
             Validation Rules
-            <span class="pointer"
+            <span class="pointer ml-2"
                   title="Click this to add a new rule"
                   @click="addNewRule"
-                  v-html="$form.getIcon('addOutline', '16px', '16px', 'green')">
+                  v-html="$form.getIcon('addOutline', '25px', '25px', 'green')">
             </span>
         </label>
 
@@ -18,7 +18,7 @@
                 <span class="pointer"
                       title="Click this to remove this rule"
                       @click="removeRule(ruleIndex)"
-                      v-html="$form.getIcon('close', '16px', '16px', 'red')">
+                      v-html="$form.getIcon('close', '20px', '20px', 'red')">
                 </span>
             </div>
 

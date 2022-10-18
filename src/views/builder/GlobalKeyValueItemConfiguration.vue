@@ -3,10 +3,10 @@
 
         <label>
             {{ title }}
-            <span class="pointer"
-                  title="Click to add a new Item"
+            <span class="pointer ml-2"
+                  title="Click To Add A New Item"
                   @click="addItem"
-                  v-html="$form.getIcon('addOutline', '16px', '16px', 'green')">
+                  v-html="$form.getIcon('addOutline', '25px', '25px', 'green')">
             </span>
         </label>
 
@@ -18,7 +18,7 @@
                 <span class="pointer"
                       title="Click this to remove this rule"
                       @click="removeItem(ruleIndex)"
-                      v-html="$form.getIcon('close', '16px', '16px', 'red')">
+                      v-html="$form.getIcon('close', '20px', '20px', 'red')">
                 </span>
             </div>
 

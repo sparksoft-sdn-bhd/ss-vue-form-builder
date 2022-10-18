@@ -25,6 +25,7 @@
     import {ALERT_DIALOG} from "@/libraries/alert-dialog";
 
     const SIDEBAR_WIDTH_SIZE = "400px"
+    const BG_COLOR = "#f4f4f4"
 
     export default {
         name: "GlobalSidebar",
@@ -56,6 +57,7 @@
                 // set size
                 this.$el.style.width = SIDEBAR_WIDTH_SIZE
                 document.getElementsByTagName("body")[0].style.marginRight = SIDEBAR_WIDTH_SIZE
+                document.getElementsByTagName("body")[0].style.backgroundColor = BG_COLOR
 
                 // turn on flag and notify watcher that sidebar is opened
                 // `runnerId` will be sent back in order to make sure other components will touch yours
@@ -95,6 +97,7 @@
             close() {
                 this.$el.style.width = 0
                 document.getElementsByTagName("body")[0].style.marginRight = 0
+                document.getElementsByTagName("body")[0].style.backgroundColor = BG_COLOR
 
                 // fire event after closed (if emit == true)
                 this.$formEvent.$emit(
