@@ -9,8 +9,7 @@
             <!-- <button class="btn btn-info mr-2" @click="setData">Sample of Survey Form (Basic Configuration / Builder)</button> -->
             <!-- <button class="btn btn-info mr-2" @click="createBlank">Create Blank Form (Builder)</button> -->
         <!-- </div> -->
-        <div class="main-container-fluid">
-            <div class="header-bar">
+            <!-- <div class="header-bar">
                 <button class="btn outline-form-btn" @click="viewRenderer">
                     <span v-show="isRenderer">
                         Back to Builder
@@ -19,10 +18,9 @@
                         Preview
                     </span>
                 </button>
-            </div>
+            </div> -->
         
-            <FormBuilder v-if="!isRenderer" v-model="formData"></FormBuilder>
-        </div>
+        <FormBuilder v-if="!isRenderer" v-model="formData"></FormBuilder>
 
         <div class="row" v-if="isRenderer" style="padding: 20px; margin-right: 0">
             <FormRenderer
@@ -98,7 +96,7 @@
                 }
 
                 this.isRenderer = false;
-                this.createBlank();
+                // this.createBlank();
             },
 
             setRandomData() {

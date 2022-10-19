@@ -1,57 +1,80 @@
 <template>
-    <div class="container-fluid md-layout form-padding vue-form-builder">
+    <div>
+        <div class="header-bar">
+            <button class="btn outline-form-btn" @click="viewRenderer">
+                <span v-show="isRenderer">
+                    Back to Builder
+                </span>
+                <span v-show="!isRenderer">
+                    Preview
+                </span>
+            </button>
+        </div>
         
-        <!-- top configuration -->
-        <FormConfiguration
-            :permissions="permissions"
-            v-model="formData.formConfig"
-            class="outline-form-btn"
-        />
+        <div class="main-container-fluid" v-if="!isRenderer">
+            <div class="container-fluid md-layout form-padding vue-form-builder">
+                <!-- top configuration -->
+                <FormConfiguration
+                    :permissions="permissions"
+                    v-model="formData.formConfig"
+                    class="outline-form-btn"
+                />
 
-        <!-- form headline -->
-        <div class="form-headline-container" v-show="formData.formConfig.isShowHeadline">
-            <h1 v-text="formData.formConfig.headline"></h1>
-            <p v-text="formData.formConfig.subHeadline"></p>
+                <!-- form headline -->
+                <div class="form-headline-container" v-show="formData.formConfig.isShowHeadline">
+                    <h1 v-text="formData.formConfig.headline"></h1>
+                    <p v-text="formData.formConfig.subHeadline"></p>
+                </div>
+                <div class="form-headline-container" v-show="!formData.formConfig.headline">
+                    <h1>Survey Form Title</h1>
+                    <p>We would love to hear your thoughts or feedback on how we can improve your experience!</p>
+                </div>
+                <hr/>
+
+                <!-- sections of the form -->
+                <SectionContainer
+                    v-for="(sectionData) in sortedSections"
+                    :section="sectionData"
+                    :rows="formData.rows"
+                    :controls="formData.controls"
+                    :key="sectionData.uniqueId"
+                    :permissions="permissions"
+                />
+
+                <!-- below all -->
+                <AddSectionControl
+                    v-if="permissions.canAddSection"
+                    @addSectionNotify="addSection"
+                />
+
+                <!-- global stuff -->
+                <GlobalSidebar
+                    :formData="formData"
+                    :permissions="permissions"
+                />
+                <GlobalModal
+                    :formData="formData"
+                    :permissions="permissions"
+                />
+            </div>
         </div>
-        <div class="form-headline-container" v-show="!formData.formConfig.headline">
-            <h1>Survey Form Title</h1>
-            <p>We would love to hear your thoughts or feedback on how we can improve your experience!</p>
-        </div>
-        <hr/>
 
-        <!-- sections of the form -->
-        <SectionContainer
-            v-for="(sectionData) in sortedSections"
-            :section="sectionData"
-            :rows="formData.rows"
-            :controls="formData.controls"
-            :key="sectionData.uniqueId"
-            :permissions="permissions"
-        />
-
-        <!-- below all -->
-        <AddSectionControl
-            v-if="permissions.canAddSection"
-            @addSectionNotify="addSection"
-        />
-
-        <!-- global stuff -->
-        <GlobalSidebar
-            :formData="formData"
-            :permissions="permissions"
-        />
-        <GlobalModal
-            :formData="formData"
-            :permissions="permissions"
-        />
-
-        <!-- <p class="copyright-text" v-text="copyrightText"></p> -->
+        <!-- PREVIEW FORM DATA -->
+        <div class="row" v-if="isRenderer" style="padding: 20px; margin-right: 0">
+            <FormRenderer
+                v-model="formInputData"
+                :class="{'col-md-9': isShowData, 'col-md-12': !isShowData}"
+                :form-configuration="formData"
+                :read-only="readOnly"
+            />
+        </div> 
     </div>
 </template>
 
 <script>
     import AddSectionControl from "@/views/builder/add-controls/AddSectionControl";
     import {MAIN_CONSTANTS} from "@/configs";
+    import FormRenderer from "@/components/FormRenderer";
     import SectionContainer from "@/views/builder/SectionContainer";
     import FormBuilderBusiness from "@/mixins/form-builder-mixins";
     import FormConfiguration from "@/views/builder/FormConfiguration";
@@ -66,7 +89,8 @@
             GlobalSidebar,
             FormConfiguration,
             SectionContainer,
-            AddSectionControl
+            AddSectionControl,
+            FormRenderer
         },
         mixins: FormBuilderBusiness,
 
@@ -81,6 +105,10 @@
 
         data: () => ({
             formData: {
+                isRenderer: false,
+                formData: null,
+                formInputData: null,
+                isShowData: false,
                 formConfig: {},
                 sections: {},
                 rows: {},
@@ -104,6 +132,27 @@
             copyrightText() {
                 return MAIN_CONSTANTS.COPYRIGHT
             }
+        },
+
+        methods: {
+            viewRenderer() {
+                if (!this.isRenderer) {
+                    this.setData();
+                    this.isRenderer = true;
+                    return;
+                }
+
+                this.isRenderer = false;
+                this.setData();
+            },
+
+            createBlank() {
+                this.formData = Object.assign({})
+            },
+
+            setData() {
+                this.formData = Object.assign({}, this.formData);
+            },
         }
     }
 </script>
