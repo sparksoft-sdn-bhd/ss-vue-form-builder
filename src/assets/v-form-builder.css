@@ -206,16 +206,27 @@
 }
 .header-bar {
     background-color: #51b070; 
-    padding: 1em 1em 3.5em 1em; 
-    margin-bottom: 1.5em;
+    padding: 1em 1em 2.6em 1em; 
     width: 100%;
     margin: 0 auto;
 }
 .outline-form-btn {
     position: relative;
     border: 1px solid #ffffff;
+    background-color: #51b070;
     color: white;
     float: right;
+    padding: 3px 14px;
+    border-radius: 5px;
+    font-size: 13px;
+}
+.outline-form-btn:hover {
+    background-color: #47a667;
+    color: white;
+}
+.align-right {
+    float: right;
+    position: relative;
 }
 
 /*********************************
@@ -379,6 +390,7 @@ body {
 
 .vue-form-builder .sidebar-form-configuration {
     padding: 15px;
+    margin-bottom: 3.5em;
 }
 
 .vue-form-builder .sidebar-form-configuration .buttons {

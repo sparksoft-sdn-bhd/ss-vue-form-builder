@@ -17,7 +17,7 @@
                 <FormConfiguration
                     :permissions="permissions"
                     v-model="formData.formConfig"
-                    class="outline-form-btn"
+                    class="align-right"
                 />
 
                 <!-- form headline -->
@@ -65,7 +65,6 @@
                 v-model="formInputData"
                 :class="{'col-md-9': isShowData, 'col-md-12': !isShowData}"
                 :form-configuration="formData"
-                :read-only="readOnly"
             />
         </div> 
     </div>

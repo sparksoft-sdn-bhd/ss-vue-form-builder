@@ -1,8 +1,8 @@
 <template>
     <div class="form-configuration-block pbottom-10">
+        <!-- ref="Btn" -->
         <button
             :class="styles.BUTTON.PRIMARY"
-            ref="Btn"
             @click="open"
             :disabled="!permissions.canEditFormConfigurations"
         >
@@ -31,9 +31,9 @@
             event: 'change',
             props: 'value'
         },
-        mounted () {
-            this.$refs.Btn.click()
-        },
+        // mounted () {
+        //     this.$refs.Btn.click()
+        // },
         methods: {
             /**
              * Open Configuration Sidebar
