@@ -206,7 +206,7 @@
 }
 .header-bar {
     background-color: #51b070; 
-    padding: 1em 1em 2.6em 1em; 
+    padding: 1em; 
     width: 100%;
     margin: 0 auto;
 }
@@ -215,7 +215,7 @@
     border: 1px solid #ffffff;
     background-color: #51b070;
     color: white;
-    float: right;
+    margin-left: 1.5em;
     padding: 3px 14px;
     border-radius: 5px;
     font-size: 13px;
