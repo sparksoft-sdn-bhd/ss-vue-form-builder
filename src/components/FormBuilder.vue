@@ -3,10 +3,10 @@
         <div class="header-bar">
             <button class="btn outline-form-btn" @click="viewRenderer">
                 <span v-show="isRenderer">
-                    Back to Builder
+                    BACK TO BUILDER
                 </span>
                 <span v-show="!isRenderer">
-                    Preview
+                    PREVIEW
                 </span>
             </button>
         </div>
