@@ -196,35 +196,35 @@ const CONTROLS = {
         configComponent: RadioCheckboxConfigView
     },
 
-    fileUploader: {
-        name: "File Uploader",
-        description: "File Uploader Control from vue-upload-component",
-        disableValidation: true,
+    // fileUploader: {
+    //     name: "File Uploader",
+    //     description: "File Uploader Control from vue-upload-component",
+    //     disableValidation: true,
 
-        // config data
-        configData: {
-            // for styling
-            buttonLabel: "Select File",
-            buttonClasses: "btn btn-primary",
+    //     // config data
+    //     configData: {
+    //         // for styling
+    //         buttonLabel: "Select File",
+    //         buttonClasses: "btn btn-primary",
 
-            // for components
-            postActionURL: "/your-api-post-url-to-upload",
-            extensions: ".gif,.png,.jpg,.jpeg",
-            accept: "image/gif,image/jpeg,image/png",
-            maxSize: 1000, // in bytes - 0 unlimited
+    //         // for components
+    //         postActionURL: "/your-api-post-url-to-upload",
+    //         extensions: ".gif,.png,.jpg,.jpeg",
+    //         accept: "image/gif,image/jpeg,image/png",
+    //         maxSize: 1000, // in bytes - 0 unlimited
 
-            isMultiple: false,
-            maximumFiles: 1, // if multiple is on, we need to configure this one
+    //         isMultiple: false,
+    //         maximumFiles: 1, // if multiple is on, we need to configure this one
 
-            // special configurations
-            // these will be appended when the vue-uploader-component make a request
-            headers: [],
-            postData: []
-        },
+    //         // special configurations
+    //         // these will be appended when the vue-uploader-component make a request
+    //         headers: [],
+    //         postData: []
+    //     },
 
-        fieldComponent: FileUploaderControl,
-        configComponent: FileUploaderConfigView
-    },
+    //     fieldComponent: FileUploaderControl,
+    //     configComponent: FileUploaderConfigView
+    // },
 
     label: {
         name: "Label",
