@@ -119,7 +119,7 @@
             if (this.value && typeof this.value === 'object') {
                 this.mapping(this.value)
             } else {
-                this.createDefaultData()
+                this.setData()
             }
         },
 
@@ -135,13 +135,13 @@
 
         methods: {
             viewRenderer() {
-                if (!this.isRenderer) {
+                if (!this.formData.isRenderer) {
                     this.setData();
                     this.isRenderer = true;
                     return;
                 }
 
-                this.isRenderer = false;
+                this.formData.isRenderer = false;
                 this.setData();
             },
 

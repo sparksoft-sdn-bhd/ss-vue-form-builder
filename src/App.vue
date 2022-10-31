@@ -67,6 +67,10 @@
             FormBuilder,
             FormRenderer
         },
+        props: {
+            formData: {type: Object, default: null},
+            readonly: {type: Boolean, default: false},
+        },
         data: () => ({
             formData: null,
             isShowDevNote: false,
@@ -85,7 +89,7 @@
             },
 
             setData() {
-                this.formData = Object.assign({}, this.formData);  //DEMO_FORM_DATA
+                this.formData = Object.assign({}, this.formData);
             },
 
             viewRenderer() {
@@ -99,32 +103,30 @@
                 // this.createBlank();
             },
 
-            setRandomData() {
-                const faker = require('faker');
+            // setRandomData() {
+            //     const faker = require('faker');
 
-                this.$set(this, 'formInputData', {
-                    "name": faker.name.findName(),
-                    "brief-description": faker.company.companyName(),
-                    "long-description": faker.lorem.paragraphs(),
-                    "user_email": faker.internet.email(),
-                    "is_deletable": faker.random.number({min: 0, max:1}),
-                    "doc_props": [""+faker.random.number({min: 1, max:3})],
-                    "doc_date": faker.date.past(),
-                    "doc-process-range": {
-                        startDate: faker.date.past(),
-                        endDate: faker.date.future(),
-                    },
-                    "total_value": faker.finance.amount()
-                });
-            },
+            //     this.$set(this, 'formInputData', {
+            //         "name": faker.name.findName(),
+            //         "brief-description": faker.company.companyName(),
+            //         "long-description": faker.lorem.paragraphs(),
+            //         "user_email": faker.internet.email(),
+            //         "is_deletable": faker.random.number({min: 0, max:1}),
+            //         "doc_props": [""+faker.random.number({min: 1, max:3})],
+            //         "doc_date": faker.date.past(),
+            //         "doc-process-range": {
+            //             startDate: faker.date.past(),
+            //             endDate: faker.date.future(),
+            //         },
+            //         "total_value": faker.finance.amount()
+            //     });
+            // },
 
             setReadonly() {
                 if (this.readOnly) {
                     this.readOnly = false;
                     return;
                 }
-
-                this.setRandomData();
                 this.readOnly = true;
             },
         }
