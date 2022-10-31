@@ -244,43 +244,43 @@ const CONTROLS = {
         configComponent: LabelConfigView
     },
 
-    button: {
-        name: "Button",
-        description: "Simple button for your own purpose",
-        disableValidation: true,
-        disableValue: true,
+    // button: {
+    //     name: "Button",
+    //     description: "Simple button for your own purpose",
+    //     disableValidation: true,
+    //     disableValue: true,
 
-        configData: {
-            buttonClass: STYLES.BUTTON.PRIMARY,
-            buttonType: "button", // submit/reset/button/...
+    //     configData: {
+    //         buttonClass: STYLES.BUTTON.PRIMARY,
+    //         buttonType: "button", // submit/reset/button/...
 
-            emitEventCode: "", // like: "BtnClicked/clicked/change"
-            emitEventData: "", // special data to emit to let you know which button is clicked
+    //         emitEventCode: "", // like: "BtnClicked/clicked/change"
+    //         emitEventData: "", // special data to emit to let you know which button is clicked
 
-            // if this is true => validation will be run before the real invoke method
-            isRunValidation: false,
+    //         // if this is true => validation will be run before the real invoke method
+    //         isRunValidation: false,
 
-            // Override here in order to not show the Label
-            isShowLabel: false,
-        },
+    //         // Override here in order to not show the Label
+    //         isShowLabel: false,
+    //     },
 
-        fieldComponent: ButtonControl,
-        configComponent: ButtonConfigView
-    },
+    //     fieldComponent: ButtonControl,
+    //     configComponent: ButtonConfigView
+    // },
 
-    emptyBlock: {
-        name: "Empty Block",
-        description: "Empty block to design your section/row.",
-        disableValidation: true,
-        disableValue: true,
+    // emptyBlock: {
+    //     name: "Empty Block",
+    //     description: "Empty block to design your section/row.",
+    //     disableValidation: true,
+    //     disableValue: true,
 
-        fieldComponent: EmptyBlockControl,
+    //     fieldComponent: EmptyBlockControl,
 
-        configData: {
-            // Override here in order to not show the Label
-            isShowLabel: false,
-        }
-    },
+    //     configData: {
+    //         // Override here in order to not show the Label
+    //         isShowLabel: false,
+    //     }
+    // },
 
     textBlock: {
         name: "Text Block",

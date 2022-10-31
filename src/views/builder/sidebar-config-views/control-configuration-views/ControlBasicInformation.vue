@@ -1,9 +1,9 @@
 <template>
     <SidebarToggleableContainer headline="Basic Detail">
-        <div :class="styles.FORM.FORM_GROUP">
+        <!-- <div :class="styles.FORM.FORM_GROUP">
             <label>Unique ID</label>
             <input type="text" :class="styles.FORM.FORM_CONTROL" :value="control.uniqueId" readonly>
-        </div>
+        </div> -->
 
         <!-- <div :class="styles.FORM.FORM_GROUP">
             <label>Name (Must be unique)</label>
