@@ -72,7 +72,6 @@
 
 <script>
     import AddSectionControl from "@/views/builder/add-controls/AddSectionControl";
-    import {MAIN_CONSTANTS} from "@/configs";
     import FormRenderer from "@/components/FormRenderer";
     import SectionContainer from "@/views/builder/SectionContainer";
     import FormBuilderBusiness from "@/mixins/form-builder-mixins";
@@ -120,16 +119,6 @@
                 this.mapping(this.value)
             } else {
                 this.setData()
-            }
-        },
-
-        computed: {
-            /**
-             * Copyright Text
-             * @returns {string}
-             */
-            copyrightText() {
-                return MAIN_CONSTANTS.COPYRIGHT
             }
         },
 
