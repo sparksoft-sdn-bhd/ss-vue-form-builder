@@ -7,10 +7,10 @@ const RADIO_CHECKBOX_STYLE = {
         val: 'line',
         description: "Line by Line"
     },
-    // next: {
-    //     val: 'next',
-    //     description: "Next to each others"
-    // },
+    next: {
+        val: 'next',
+        description: "Next to each others"
+    },
     bothSide: {
         val: "bothSide",
         description: "Stay on each sides in a row (Left - Right)",
