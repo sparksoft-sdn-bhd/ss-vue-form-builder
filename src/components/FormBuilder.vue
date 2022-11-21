@@ -1,17 +1,19 @@
 <template>
     <div>
         <div class="header-bar">
-            <button class="btn outline-form-btn" @click="viewRenderer">
-                <span v-show="isRenderer">
+            <button class="btn outline-form-btn float-left" @click="viewRenderer">
+                <span v-show="formData.isRenderer">
                     BACK TO BUILDER
                 </span>
-                <span v-show="!isRenderer">
+                <span v-show="!formData.isRenderer">
                     PREVIEW
                 </span>
             </button>
+            <button class="btn outline-form-btn" @click="$emit('publish', formData)">PUBLISH</button>
+            <button class="btn outline-form-btn mr-3" @click="$emit('cancel')">CANCEL</button>
         </div>
         
-        <div class="main-container-fluid" v-if="!isRenderer">
+        <div class="main-container-fluid" v-if="!formData.isRenderer">
             <div class="container-fluid md-layout form-padding vue-form-builder">
                 <!-- top configuration -->
                 <FormConfiguration
@@ -62,9 +64,9 @@
         <!-- PREVIEW FORM DATA -->
         <div class="row" v-if="isRenderer" style="padding: 20px; margin-right: 0">
             <FormRenderer
-                v-model="formInputData"
+                v-model="formData"
                 :class="{'col-md-9': isShowData, 'col-md-12': !isShowData}"
-                :form-configuration="formData"
+                :form-configuration="formData.formConfig"
             />
         </div> 
     </div>
@@ -126,7 +128,7 @@
             viewRenderer() {
                 if (!this.formData.isRenderer) {
                     this.setData();
-                    this.isRenderer = true;
+                    this.formData.isRenderer = true;
                     return;
                 }
 
