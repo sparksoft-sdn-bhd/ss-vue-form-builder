@@ -26,10 +26,10 @@
         </SidebarToggleableContainer>
 
         <!-- Validation of the control / same for all -->
-        <!-- <ControlValidationInformation
+        <ControlValidationInformation
             v-if="!isValidationDisabled && permissions.canUpdateControlValidation"
             :control="control"
-        /> -->
+        />
 
         <div class="buttons">
             <!-- <button :class="styles.BUTTON.PRIMARY" @click="save(false)">
