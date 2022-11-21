@@ -6,7 +6,7 @@
                 <option v-for="(className, classID) in containerClasses"
                         :key="className"
                         :value="className">
-                    {{classID}} ({{className}})
+                    {{getClassDescription(classID)}}
                 </option>
             </select>
         </div>
@@ -43,6 +43,19 @@
         computed: {
             containerClasses() {
                 return this.styles.COLUMNS
+            }
+        },
+
+        methods: {
+            getClassDescription(classID) {
+                switch(classID) {
+                    case 'COL6': {
+                        return '2 Items / Line';
+                    }
+                    case 'COL12': {
+                        return '1 Item / Line';
+                    }
+                }
             }
         }
     }
