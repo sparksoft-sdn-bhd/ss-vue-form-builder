@@ -211,8 +211,7 @@
     margin: 0 auto;
 }
 .outline-form-btn {
-    position: relative;
-    border: 1px solid #ffffff;
+    border: 1px solid white;
     background-color: #51b070;
     color: white;
     margin-left: 1.5em;
@@ -1069,7 +1068,7 @@ html.md-theme-default .vue-form-builder .section-container {
 .open>.md-button.md-success.dropdown-toggle,
 .open>.md-button.md-success.dropdown-toggle:focus,
 .open>.md-button.md-success.dropdown-toggle:hover {
-    background-color: #4caf50 !important;
+    background-color: #51b070 !important;
     color: #fff !important;
     padding: 5px 10px;
     border-radius: 5px;
