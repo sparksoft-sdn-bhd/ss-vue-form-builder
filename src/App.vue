@@ -80,9 +80,9 @@
             readOnly: false,
         }),
         methods: {
-            getData() {
-                console.log(JSON.stringify(this.formData))
-            },
+            // getData() {
+            //     console.log(JSON.stringify(this.formData))
+            // },
 
             createBlank() {
                 this.formData = Object.assign({})
