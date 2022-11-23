@@ -205,8 +205,8 @@
     display: block;
 }
 .header-bar {
-    background-color: #51b070; 
-    padding: 1em; 
+    background-color: #51b070;
+    padding: 1em 1em 2.6em 1em;
     width: 100%;
     margin: 0 auto;
 }
