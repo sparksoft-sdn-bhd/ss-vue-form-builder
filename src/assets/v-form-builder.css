@@ -212,6 +212,7 @@
 }
 .outline-form-btn {
     border: 1px solid white;
+    float: right;
     background-color: #51b070;
     color: white;
     margin-left: 1.5em;
