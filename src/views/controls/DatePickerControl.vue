@@ -37,7 +37,7 @@
 
 <script>
     import {CONTROL_FIELD_EXTEND_MIXIN} from "@/mixins/control-field-extend-mixin";
-    import Litepicker from 'litepicker';
+    import { easepick } from '@easepick/bundle';
     import dayjs from 'dayjs';
     import {DATE_PICKER_RETURN_TYPES} from "@/configs/control-config-enum";
 
@@ -111,7 +111,7 @@
                         return
                     }
 
-                    this.datepicker.setDate(val);
+                    this.datepicker.setDate(val)
                 }
             },
 
@@ -158,8 +158,9 @@
             }
         },
         mounted() {
-            this.datepicker = new Litepicker({
+            this.datepicker = new easepick.create({
                 element: document.getElementById(this.control.uniqueId),
+                autoApply: true,
 
                 // applying the configuration (base)
                 ...this.control,
@@ -167,18 +168,20 @@
                 /**
                  * Post-render processing
                  */
-                onRender: () => {
-                    if (this.control.defaultValue) {
-                        this.setValue(this.control.defaultValue);
-                    }
-                },
-
-                /**
-                 * On-Selected a Day
-                 * @param {Date} date
-                 */
-                onSelect: this.getValue
+                setup(picker) {
+                    /**
+                     * On-Selected a Day
+                     * @param {Date} date
+                     */
+                    picker.on('select', () => {
+                        this.getValue()
+                    })
+                }
             })
+
+            if (this.control.defaultValue) {
+                this.setValue(this.control.defaultValue)
+            }
         },
 
         beforeDestroy() {
