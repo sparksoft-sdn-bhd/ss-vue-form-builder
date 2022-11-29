@@ -182,6 +182,9 @@
                 }
             })
 
+            // To fix the Calendar displayed below of all other things
+            this.$el.querySelector('.easepick-wrapper').setAttribute('style', 'position: absolute; pointer-events: none; z-index: 99 !important;')
+
             if (this.control.defaultValue) {
                 this.setValue(this.control.defaultValue)
             }
