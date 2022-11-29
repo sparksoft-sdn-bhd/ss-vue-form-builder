@@ -160,6 +160,9 @@
         mounted() {
             this.datepicker = new easepick.create({
                 element: document.getElementById(this.control.uniqueId),
+                css: [
+                    'https://cdn.jsdelivr.net/npm/@easepick/core@1.2.0/dist/index.css'
+                ],
                 autoApply: true,
 
                 // applying the configuration (base)
@@ -178,6 +181,9 @@
                     })
                 }
             })
+
+            // To fix the Calendar displayed below of all other things
+            this.$el.querySelector('.easepick-wrapper').setAttribute('style', 'position: absolute; pointer-events: none; z-index: 99 !important;')
 
             if (this.control.defaultValue) {
                 this.setValue(this.control.defaultValue)
