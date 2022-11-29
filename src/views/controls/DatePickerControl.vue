@@ -160,6 +160,9 @@
         mounted() {
             this.datepicker = new easepick.create({
                 element: document.getElementById(this.control.uniqueId),
+                css: [
+                    'https://cdn.jsdelivr.net/npm/@easepick/core@1.2.0/dist/index.css'
+                ],
                 autoApply: true,
 
                 // applying the configuration (base)
