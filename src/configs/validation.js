@@ -46,23 +46,23 @@ const VALIDATION_RULES = {
         errorMessage: "This field value doesn't match with the rule",
     },
 
-    sameAs: {
-        desc: "Check if the field has same value with another field",
+    // sameAs: {
+    //     desc: "Check if the field has same value with another field",
 
-        needValue: true,
-        valueInfo: "The field name you want to check with",
+    //     needValue: true,
+    //     valueInfo: "The field name you want to check with",
 
-        errorMessage: "This field value doesn't as same as :sameAs",
-    },
+    //     errorMessage: "This field value doesn't as same as :sameAs",
+    // },
 
-    customClosure: {
-        desc: "Invoke your own method to check your field",
+    // customClosure: {
+    //     desc: "Invoke your own method to check your field",
 
-        needValue: true,
-        valueInfo: "Your method name",
+    //     needValue: true,
+    //     valueInfo: "Your method name",
 
-        errorMessage: "Custom validation failed.",
-    }
+    //     errorMessage: "Custom validation failed.",
+    // }
 }
 
 /**
