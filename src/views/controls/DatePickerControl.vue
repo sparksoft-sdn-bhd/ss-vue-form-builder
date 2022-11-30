@@ -75,7 +75,7 @@
                     return
                 }
 
-                this.datepicker.setOptions(ops)
+                // this.datepicker.setOptions(ops)
             },
 
             /**

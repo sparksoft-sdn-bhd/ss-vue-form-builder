@@ -122,7 +122,7 @@ const CONTROLS = {
         },
 
         fieldComponent: DatePickerControl,
-        configComponent: DatePickerConfigView
+        // configComponent: DatePickerConfigView
     },
 
     // fileUpload: {
