@@ -4,8 +4,8 @@
  */
 
 const FORM_DEFAULT_DATA = {
-    headline: "",
-    subHeadline: "",
+    headline: "Survey Form Title",
+    subHeadline: "We would love to hear your thoughts or feedback on how we can improve your experience!",
     isShowHeadline: true,
 
     // <form></form> tag ??

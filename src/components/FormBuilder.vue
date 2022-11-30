@@ -27,10 +27,6 @@
                     <h1 v-text="formData.formConfig.headline"></h1>
                     <p v-text="formData.formConfig.subHeadline"></p>
                 </div>
-                <div class="form-headline-container" v-show="!formData.formConfig.headline">
-                    <h1>Survey Form Title</h1>
-                    <p>We would love to hear your thoughts or feedback on how we can improve your experience!</p>
-                </div>
                 <hr/>
 
                 <!-- sections of the form -->
