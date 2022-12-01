@@ -23,13 +23,9 @@
                 />
 
                 <!-- form headline -->
-                <div class="form-headline-container" v-show="formData.formConfig.isShowHeadline">
+                <div class="form-headline-container" v-show="formData.formConfig.headline && formData.formConfig.isShowHeadline">
                     <h1 v-text="formData.formConfig.headline"></h1>
                     <p v-text="formData.formConfig.subHeadline"></p>
-                </div>
-                <div class="form-headline-container" v-show="!formData.formConfig.headline">
-                    <h1>Survey Form Title</h1>
-                    <p>We would love to hear your thoughts or feedback on how we can improve your experience!</p>
                 </div>
                 <hr/>
 
@@ -63,11 +59,7 @@
 
         <!-- PREVIEW FORM DATA -->
         <div class="row" v-if="isRenderer" style="padding: 20px; margin-right: 0">
-            <FormRenderer
-                v-model="formData"
-                :class="{'col-md-9': isShowData, 'col-md-12': !isShowData}"
-                :form-configuration="formData.formConfig"
-            />
+            <FormRenderer :form-configuration="formData" />
         </div> 
     </div>
 </template>

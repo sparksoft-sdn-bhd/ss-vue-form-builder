@@ -67,6 +67,10 @@
                 }
 
                 let newValue = Object.assign({}, this.value, data)
+
+                // Force Show Headline
+                newValue.isShowHeadline = true
+                
                 this.$emit('change', newValue) // run this to update v-model
                 this.permissions.canEditFormConfigurations = true;
             },

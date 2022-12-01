@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div :class="styles.FORM.FORM_GROUP">
+        <!-- <div :class="styles.FORM.FORM_GROUP">
             <label>Display Mode</label>
             <select :class="styles.FORM.FORM_CONTROL"
                     v-model="control.displayMode">
@@ -12,9 +12,9 @@
                 </option>
 
             </select>
-        </div>
+        </div> -->
 
-        <div :class="styles.FORM.FORM_GROUP">
+        <!-- <div :class="styles.FORM.FORM_GROUP">
             <label>Display Position</label>
             <select :class="styles.FORM.FORM_CONTROL"
                     v-model="control.position">
@@ -26,7 +26,7 @@
                 </option>
 
             </select>
-        </div>
+        </div> -->
 
         <div :class="styles.FORM.FORM_GROUP">
             <label>
@@ -48,18 +48,18 @@
                 </div>
 
                 <div :class="styles.FORM.FORM_GROUP">
-                    <label>Label Text (Ex: Label Text)</label>
+                    <label>Option (Ex: Label Text)</label>
                     <input type="text" :class="styles.FORM.FORM_CONTROL"
                            placeholder="Label text"
                            v-model="listItem.text">
                 </div>
 
-                <div :class="styles.FORM.FORM_GROUP">
+                <!-- <div :class="styles.FORM.FORM_GROUP">
                     <label>Label Value (Ex: label_text)</label>
                     <input type="text" :class="styles.FORM.FORM_CONTROL"
                            placeholder="Radio/Checkbox-Value"
                            v-model="listItem.value">
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
@@ -89,6 +89,18 @@
              */
             removeListItem(index) {
                 this.control.items.splice(index, 1)
+            }
+        },
+
+        watch: {
+            'control.items': {
+                handler() {
+                    this.control.items.forEach((item) => {
+                        item.value = item.text
+                    })
+                },
+                deep: true,
+                immediate: true
             }
         },
 

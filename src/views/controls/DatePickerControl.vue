@@ -75,7 +75,7 @@
                     return
                 }
 
-                this.datepicker.setOptions(ops)
+                // this.datepicker.setOptions(ops)
             },
 
             /**
@@ -164,6 +164,7 @@
                     'https://cdn.jsdelivr.net/npm/@easepick/core@1.2.0/dist/index.css'
                 ],
                 autoApply: true,
+                format: 'DD/MM/YYYY',
 
                 // applying the configuration (base)
                 ...this.control,
