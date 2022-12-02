@@ -58,7 +58,7 @@
         </div>
 
         <!-- PREVIEW FORM DATA -->
-        <div class="row" v-if="isRenderer" style="padding: 20px; margin-right: 0">
+        <div class="row" v-if="formData.isRenderer" style="padding: 20px; margin-right: 0">
             <FormRenderer :form-configuration="formData" />
         </div> 
     </div>
@@ -121,15 +121,12 @@
                 if (!this.formData.isRenderer) {
                     this.setData();
                     this.formData.isRenderer = true;
+                    
                     return;
                 }
 
                 this.formData.isRenderer = false;
                 this.setData();
-            },
-
-            createBlank() {
-                this.formData = Object.assign({})
             },
 
             setData() {
