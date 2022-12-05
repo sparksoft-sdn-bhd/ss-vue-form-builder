@@ -58,7 +58,7 @@
         </div>
 
         <!-- PREVIEW FORM DATA -->
-        <div class="row" v-if="formData.isRenderer" style="padding: 20px; margin-right: 0">
+        <div v-if="formData.isRenderer" style="padding: 20px; margin-right: 0">
             <FormRenderer :form-configuration="formData" />
         </div> 
     </div>
