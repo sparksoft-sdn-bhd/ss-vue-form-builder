@@ -8,10 +8,10 @@
             :control="control"
         />
 
-        <ControlStylingInformation
+        <!-- <ControlStylingInformation
             v-if="permissions.canUpdateControlStyling"
             :control="control"
-        />
+        /> -->
 
         <!-- Control specific configuration / Only render it if the control has specific configuration view -->
         <SidebarToggleableContainer
