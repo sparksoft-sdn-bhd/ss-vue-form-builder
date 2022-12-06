@@ -1,11 +1,11 @@
 <template>
     <div>
-        <div :class="styles.FORM.FORM_GROUP">
+        <!-- <div :class="styles.FORM.FORM_GROUP">
             <label>
                 Multiple Selection?
                 <input type="checkbox" v-model="control.multiple">
             </label>
-        </div>
+        </div> -->
 
         <!-- <div :class="styles.FORM.FORM_GROUP">
             <label>Option-Data-List Mode</label>
