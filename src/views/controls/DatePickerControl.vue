@@ -158,6 +158,8 @@
             }
         },
         mounted() {
+            let lex_this = this
+
             this.datepicker = new easepick.create({
                 element: document.getElementById(this.control.uniqueId),
                 css: [
@@ -177,8 +179,9 @@
                      * On-Selected a Day
                      * @param {Date} date
                      */
-                    picker.on('select', () => {
-                        this.getValue()
+                    picker.on('select', (e) => {
+                        const { view, date, target } = e.detail
+                        lex_this.getValue(date)
                     })
                 }
             })
