@@ -81,11 +81,7 @@
         mounted() {
             if (this.control.defaultValue) {
                 // assign default value for control
-                if (this.isRadio) {
-                    this.updateValue(this.control.defaultValue)
-                } else {
-                    this.updateValue([this.control.defaultValue])
-                }
+                this.updateValue(this.control.defaultValue)
             }
         },
 
