@@ -89,6 +89,10 @@
             this.$formEvent.$on(EVENT_CONSTANTS.BUILDER.SIDEBAR.OPENED, this.afterOpenedSidebar)
             this.$formEvent.$on(EVENT_CONSTANTS.BUILDER.SIDEBAR.SAVE_AND_CLOSE, this.createNewControlForSection)
         },
+
+        beforeDestroy() {
+            this.$formEvent.$off(EVENT_CONSTANTS.BUILDER.SIDEBAR.SAVE_AND_CLOSE, this.createNewControlForSection)
+        }
     }
 
 </script>
