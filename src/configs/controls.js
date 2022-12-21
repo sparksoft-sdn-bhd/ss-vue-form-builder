@@ -184,7 +184,7 @@ const CONTROLS = {
         description: "Radio-Button list items (Single Select)",
 
         configData: {
-            displayMode: RADIO_CHECKBOX_STYLE.line.val, // line by line / next to each others / 2 items per line
+            displayMode: RADIO_CHECKBOX_STYLE.next.val, // line by line / next to each others / 2 items per line
             position: RADIO_CHECKBOX_POSITION.left.val, // POSITION
             /**
              * @var {ListItem[]} items
