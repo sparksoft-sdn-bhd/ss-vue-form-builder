@@ -86,7 +86,7 @@
 }
 
 .vue-form-builder .add-section-container:hover {
-    border-color: #3cd76a;
+    border-color: #df514b;
     cursor: pointer;
 }
 
@@ -205,7 +205,7 @@
     display: block;
 }
 .header-bar {
-    background-color: #51b070;
+    background-color: #db3e37;
     padding: 1em 1em 2.6em 1em;
     width: 100%;
     margin: 0 auto;
@@ -213,7 +213,7 @@
 .outline-form-btn {
     border: 1px solid white;
     float: right;
-    background-color: #51b070;
+    background-color: #db3e37;
     color: white;
     margin-left: 1.5em;
     padding: 3px 14px;
@@ -221,7 +221,7 @@
     font-size: 13px;
 }
 .outline-form-btn:hover {
-    background-color: #47a667;
+    background-color: #c53832;
     color: white;
 }
 .align-right {
@@ -525,7 +525,7 @@ body {
 .form-control:focus {
     color: #495057;
     background-color: #fff;
-    border-color: #3ce07e !important;
+    border-color: #e2655f !important;
     outline: 0;
     box-shadow: 0 0 0 0.2rem rgb(49 229 124 / 21%);
 }
@@ -587,7 +587,7 @@ html.md-theme-default .vue-form-builder .section-container {
 .open>.md-button.md-primary.dropdown-toggle,
 .open>.md-button.md-primary.dropdown-toggle:focus,
 .open>.md-button.md-primary.dropdown-toggle:hover {
-    background-color: #51b070 !important;
+    background-color: #db3e37 !important;
     color: #fff !important;
     padding: 5px 10px;
     border-radius: 5px;
@@ -638,7 +638,7 @@ html.md-theme-default .vue-form-builder .section-container {
 .open>.md-button.md-success.dropdown-toggle,
 .open>.md-button.md-success.dropdown-toggle:focus,
 .open>.md-button.md-success.dropdown-toggle:hover {
-    background-color: #51b070 !important;
+    background-color: #db3e37 !important;
     color: #fff !important;
     padding: 5px 10px;
     border-radius: 5px;
@@ -1012,7 +1012,7 @@ html.md-theme-default .vue-form-builder .md-list-item, .list-group .md-list-item
     padding-bottom: 5px;
     padding-left: 16px;
     padding-right: 16px;
-    background-color: #5cb85c;
+    background-color: #db3e37;
     color: white;
     display: block;
 }
