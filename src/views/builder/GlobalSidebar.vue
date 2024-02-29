@@ -57,7 +57,7 @@
                 // set size
                 this.$el.style.width = SIDEBAR_WIDTH_SIZE
                 document.getElementsByTagName("body")[0].style.marginRight = SIDEBAR_WIDTH_SIZE
-                document.getElementsByTagName("body")[0].style.backgroundColor = this.color
+                document.getElementsByTagName("body")[0].style.backgroundColor = "#f4f4f4"
 
                 // turn on flag and notify watcher that sidebar is opened
                 // `runnerId` will be sent back in order to make sure other components will touch yours
@@ -97,7 +97,7 @@
             close() {
                 this.$el.style.width = 0
                 document.getElementsByTagName("body")[0].style.marginRight = 0
-                document.getElementsByTagName("body")[0].style.backgroundColor = this.color
+                document.getElementsByTagName("body")[0].style.backgroundColor = "#f4f4f4"
 
                 // fire event after closed (if emit == true)
                 this.$formEvent.$emit(
