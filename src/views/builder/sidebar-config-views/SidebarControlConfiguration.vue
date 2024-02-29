@@ -29,13 +29,14 @@
         <ControlValidationInformation
             v-if="!isValidationDisabled && permissions.canUpdateControlValidation"
             :control="control"
+            :color="color"
         />
 
         <div class="buttons">
             <!-- <button :class="styles.BUTTON.PRIMARY" @click="save(false)">
                 Save
             </button> -->
-            <button :class="styles.BUTTON.PRIMARY" @click="save(true)">
+            <button :class="styles.BUTTON.PRIMARY" :style="{backgroundColor: color + ' !important'}" @click="save(true)">
                 Save & Close
             </button>
         </div>
@@ -66,7 +67,8 @@
         mixins: [STYLE_INJECTION_MIXIN, SIDEBAR_BODY_MIXIN],
 
         props: {
-            permissions: Object
+            permissions: Object,
+            color: String
         },
 
         data:() => ({

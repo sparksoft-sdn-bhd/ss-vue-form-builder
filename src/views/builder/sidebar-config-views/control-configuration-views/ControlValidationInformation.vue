@@ -6,7 +6,7 @@
             <span class="pointer ml-2"
                   title="Click this to add a new rule"
                   @click="addNewRule"
-                  v-html="$form.getIcon('addOutline', '25px', '25px', 'green')">
+                  v-html="$form.getIcon('addOutline', '25px', '25px', color)">
             </span>
         </label>
 
@@ -77,7 +77,8 @@
         mixins: [STYLE_INJECTION_MIXIN],
         components: {SidebarToggleableContainer},
         props: {
-            control: Object
+            control: Object,
+            color: String
         },
 
         methods: {

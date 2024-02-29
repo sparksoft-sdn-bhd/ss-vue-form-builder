@@ -7,15 +7,15 @@
 
         <!--- For dynamic purpose --->
         <component v-if="component"
+            :is="component"
+            :dataPackage="dynamicData"
+            :color="color"
+            :formData="formData"
+            :permissions="permissions"
 
-                   :is="component"
-                   :dataPackage="dynamicData"
-                   :formData="formData"
-                   :permissions="permissions"
-
-                   @save="save"
-                   @saveAndClose="saveAndClose"
-                   @close="close"
+            @save="save"
+            @saveAndClose="saveAndClose"
+            @close="close"
         />
     </div>
 </template>
@@ -25,7 +25,6 @@
     import {ALERT_DIALOG} from "@/libraries/alert-dialog";
 
     const SIDEBAR_WIDTH_SIZE = "400px"
-    const BG_COLOR = "#f4f4f4"
 
     export default {
         name: "GlobalSidebar",
@@ -36,13 +35,14 @@
                     return {}
                 }
             },
-            permissions: Object
+            permissions: Object,
+            color: { type: String, default: "#f4f4f4" }
         },
         data: () => ({
             component: null,
             dynamicData: {},
             runnerId: null,
-            isOpen: false,
+            isOpen: false
         }),
         methods: {
             /**
@@ -57,7 +57,7 @@
                 // set size
                 this.$el.style.width = SIDEBAR_WIDTH_SIZE
                 document.getElementsByTagName("body")[0].style.marginRight = SIDEBAR_WIDTH_SIZE
-                document.getElementsByTagName("body")[0].style.backgroundColor = BG_COLOR
+                document.getElementsByTagName("body")[0].style.backgroundColor = this.color
 
                 // turn on flag and notify watcher that sidebar is opened
                 // `runnerId` will be sent back in order to make sure other components will touch yours
@@ -97,7 +97,7 @@
             close() {
                 this.$el.style.width = 0
                 document.getElementsByTagName("body")[0].style.marginRight = 0
-                document.getElementsByTagName("body")[0].style.backgroundColor = BG_COLOR
+                document.getElementsByTagName("body")[0].style.backgroundColor = this.color
 
                 // fire event after closed (if emit == true)
                 this.$formEvent.$emit(

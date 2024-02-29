@@ -68,7 +68,8 @@
                 type: Object,
                 required: true,
             },
-            permissions: Object
+            permissions: Object,
+            color: String
         },
 
         computed: {
@@ -140,7 +141,8 @@
                 this.$formEvent.$emit(EVENT_CONSTANTS.BUILDER.SIDEBAR.INJECT, new SidebarRenderer(
                     this.section.uniqueId,
                     SidebarSectionConfiguration,
-                    this.section
+                    this.section,
+                    this.color
                 ));
             },
 

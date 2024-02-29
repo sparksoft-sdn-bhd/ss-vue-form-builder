@@ -14,7 +14,7 @@
                    :class="styles.FORM.FORM_CONTROL"
                    v-model="formConfiguration.subHeadline">
         </div>
-<!-- 
+<!--
        <div :class="styles.FORM.FORM_GROUP">
             <label>
                 Show Form Title?
@@ -67,7 +67,7 @@
             <!-- <button :class="styles.BUTTON.PRIMARY" @click="save(false)">
                 Save
             </button> -->
-            <button :class="styles.BUTTON.PRIMARY" @click="save(true)">
+            <button :class="styles.BUTTON.PRIMARY" :style="{backgroundColor: color + ' !important'}" @click="save(true)">
                 Save & Close
             </button>
         </div>
@@ -89,6 +89,7 @@
             // OVERRIDE IT FROM `SIDEBAR_BODY_MIXIN`
             dataKey: "formConfiguration",
             formConfiguration: Object.assign({}, FORM_DEFAULT_DATA),
+            color: '',
         }),
 
         methods: {
@@ -108,6 +109,7 @@
         created() {
             // retrieve the data from `GlobalSidebar` passed in
             this.formConfiguration = Object.assign({}, this.formConfiguration, this.dataPackage)
+            this.color = this.$attrs.color
         }
     }
 </script>

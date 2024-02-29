@@ -1,7 +1,7 @@
 <template>
     <div>
-        <div class="header-bar">
-            <button class="btn outline-form-btn float-left" @click="viewRenderer">
+        <div class="header-bar" :style="{backgroundColor: color}">
+            <button class="btn outline-form-btn float-left" :style="{backgroundColor: color}" @click="viewRenderer">
                 <span v-show="formData.isRenderer">
                     BACK TO BUILDER
                 </span>
@@ -9,10 +9,10 @@
                     PREVIEW
                 </span>
             </button>
-            <button class="btn outline-form-btn" @click="$emit('publish', formData)">PUBLISH</button>
-            <button class="btn outline-form-btn mr-3" @click="$emit('cancel')">CANCEL</button>
+            <button class="btn outline-form-btn" :style="{backgroundColor: color}" @click="$emit('publish', formData)">PUBLISH</button>
+            <button class="btn outline-form-btn mr-3" :style="{backgroundColor: color}" @click="$emit('cancel')">CANCEL</button>
         </div>
-        
+
         <div class="main-container-fluid" v-if="!formData.isRenderer">
             <div class="container-fluid md-layout form-padding vue-form-builder">
                 <!-- top configuration -->
@@ -20,6 +20,7 @@
                     :permissions="permissions"
                     v-model="formData.formConfig"
                     class="align-right"
+                    :color="color"
                 />
 
                 <!-- form headline -->
@@ -49,6 +50,7 @@
                 <GlobalSidebar
                     :formData="formData"
                     :permissions="permissions"
+                    :color="color"
                 />
                 <GlobalModal
                     :formData="formData"
@@ -59,8 +61,8 @@
 
         <!-- PREVIEW FORM DATA -->
         <div v-if="formData.isRenderer" style="padding: 20px; margin-right: 0">
-            <FormRenderer :form-configuration="formData" />
-        </div> 
+            <FormRenderer :form-configuration="formData" :color="color" />
+        </div>
     </div>
 </template>
 
@@ -92,7 +94,8 @@
                 default: () => {
                     return DefaultPermission
                 }
-            }
+            },
+            color: { type: String },
         },
 
         data: () => ({
@@ -121,7 +124,7 @@
                 if (!this.formData.isRenderer) {
                     this.setData();
                     this.formData.isRenderer = true;
-                    
+
                     return;
                 }
 

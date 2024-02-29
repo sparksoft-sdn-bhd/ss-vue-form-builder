@@ -5,6 +5,7 @@
             :class="styles.BUTTON.PRIMARY"
             @click="open"
             :disabled="!permissions.canEditFormConfigurations"
+            :style="{backgroundColor: color + ' !important'}"
         >
             <span>Rename Form</span>
         </button>
@@ -25,7 +26,8 @@
         mixins: [STYLE_INJECTION_MIXIN],
         props: {
             value: Object,
-            permissions: Object
+            permissions: Object,
+            color: { type: String },
         },
         model: {
             event: 'change',
@@ -51,7 +53,8 @@
                 this.$formEvent.$emit(EVENT_CONSTANTS.BUILDER.SIDEBAR.INJECT, new SidebarRenderer(
                     RUNNER_ID,
                     SidebarFormConfiguration,
-                    this.value
+                    this.value,
+                    this.color
                 ));
             },
 
@@ -70,7 +73,7 @@
 
                 // Force Show Headline
                 newValue.isShowHeadline = true
-                
+
                 this.$emit('change', newValue) // run this to update v-model
                 this.permissions.canEditFormConfigurations = true;
             },

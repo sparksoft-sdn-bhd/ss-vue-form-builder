@@ -8,6 +8,7 @@
             <!-- render the exact field -->
             <component :is="controlComponent"
                        :control="control"
+                       :color="color"
             />
 
         </div>
@@ -43,7 +44,8 @@
                 type: String,
                 required: true,
             },
-            permissions: Object
+            permissions: Object,
+            color: String
         },
 
         data: () => ({
@@ -96,7 +98,8 @@
                 this.$formEvent.$emit(EVENT_CONSTANTS.BUILDER.SIDEBAR.INJECT, new SidebarRenderer(
                     this.control.uniqueId,
                     SidebarControlConfiguration,
-                    this.control
+                    this.control,
+                    this.color
                 ));
             },
 

@@ -41,7 +41,7 @@
             <!-- <button :class="styles.BUTTON.PRIMARY" @click="save(false)">
                 Save
             </button> -->
-            <button :class="styles.BUTTON.PRIMARY" @click="save(true)">
+            <button :class="styles.BUTTON.PRIMARY" :style="{backgroundColor: color + ' !important'}" @click="save(true)">
                 Save & Close
             </button>
         </div>
@@ -59,12 +59,14 @@
 
         data: () => ({
             dataKey: "sectionConfiguration",
-            sectionConfiguration: Object.assign({}, SECTION_DEFAULT_DATA)
+            sectionConfiguration: Object.assign({}, SECTION_DEFAULT_DATA),
+            color: '',
         }),
 
         created() {
             // retrieve the data from `GlobalSidebar` passed in
             this.sectionConfiguration = Object.assign({}, this.sectionConfiguration, this.dataPackage)
+            this.color = this.$attrs.color
         }
     }
 </script>

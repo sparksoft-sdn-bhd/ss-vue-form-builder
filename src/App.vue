@@ -2,7 +2,7 @@
     <div id="app">
         <!-- <h1 class="text-center mt-2">Vue-Form-Builder @ v2.1.0 - Development-Preview</h1>
         <p class="text-center">Presented by <strong>Seth (Sandaru) Phat</strong></p>
-        <h4 class="text-center mb-3">What you <strong>BUILD</strong> is what you <strong>GOT</strong>.</h4> --> 
+        <h4 class="text-center mb-3">What you <strong>BUILD</strong> is what you <strong>GOT</strong>.</h4> -->
 
         <!-- <div class="col-md-12"> -->
             <!-- <button class="btn btn-info mr-2" @click="getData">Get JSON Form-Data (Console / Builder)</button> -->
@@ -19,8 +19,8 @@
                     </span>
                 </button>
             </div> -->
-        
-        <FormBuilder v-if="!isRenderer" v-model="formData"></FormBuilder>
+
+        <FormBuilder v-if="!isRenderer" v-model="formData" :color="color"></FormBuilder>
 
         <div class="row" v-if="isRenderer" style="padding: 20px; margin-right: 0">
             <FormRenderer
@@ -29,13 +29,13 @@
                 :form-configuration="formData"
                 :read-only="readOnly"
             />
-            <!-- <div class="col-md-12 mb-4"> 
+            <!-- <div class="col-md-12 mb-4">
                 <button class="btn btn-success  mr-2" @click="isShowData = !isShowData">
                     <span v-show="isShowData">Hide Form Data</span>
                     <span v-show="!isShowData">Show Form Data</span>
                 </button>
 
-                <button class="btn btn-info mr-2" @click="setRandomData">Set Random Data</button> 
+                <button class="btn btn-info mr-2" @click="setRandomData">Set Random Data</button>
 
                 <button
                     class="btn btn-info mr-2"
@@ -70,6 +70,7 @@
         props: {
             formData: {type: Object, default: null},
             readonly: {type: Boolean, default: false},
+            color: {type: String, default: '#51b070'}
         },
         data: () => ({
             formData: null,
@@ -80,10 +81,6 @@
             readOnly: false,
         }),
         methods: {
-            // getData() {
-            //     console.log(JSON.stringify(this.formData))
-            // },
-
             createBlank() {
                 this.formData = Object.assign({})
             },
